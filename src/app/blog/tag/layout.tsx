@@ -1,4 +1,4 @@
-import Sidebar from './_component/Sidebar'
+import Sidebar from '../../../components/blog/blogSide/Sidebar'
 
 export default async function Layout({ children }: { children: React.ReactNode }) {
   return (

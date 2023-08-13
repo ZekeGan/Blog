@@ -1,5 +1,7 @@
-import SidebarMain from '@/components/sidebar/SidebarMain'
+import SidebarMain from '@/components/SidebarMain'
 import '@/styles/globals.scss'
+import '@/styles/prism-dracula.css'
+import '@/styles/prism-plus.css'
 import { Inter } from 'next/font/google'
 
 const inter = Inter({ subsets: ['latin'] })

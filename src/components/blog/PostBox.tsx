@@ -1,23 +1,14 @@
 'use client'
-
-import { useMemo, useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import _ from 'lodash'
 import { Post } from 'contentlayer/generated'
 
 export default function PostBox({ data }: { data: Post }) {
-  const [tag, setTag] = useState('')
-
-  const postUrl = useMemo(() => {
-    const urlArr = data.url.split('/')
-    return `/blog/post/${urlArr[2]}`
-  }, [data.url])
-
   return (
     <div className='grid grid-cols-[auto_20rem] h-52 px-5 py-3  border-b-[1px] border-gray-200'>
       <div className='grid grid-rows-[9rem_auto]'>
-        <Link href={postUrl}>
+        <Link href={data.url}>
           <h1 className='text-lg font-semibold'>{data.title}</h1>
           <p>{data.description}</p>
         </Link>
@@ -34,7 +25,10 @@ export default function PostBox({ data }: { data: Post }) {
         </div>
       </div>
 
-      <Link href={postUrl} className='h-[rem] w-[15rem] relative overflow-hidden ml-auto'>
+      <Link
+        href={data.url}
+        className='h-[rem] w-[15rem] relative overflow-hidden ml-auto'
+      >
         <Image
           src='/images/22.jpg'
           alt=''

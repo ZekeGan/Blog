@@ -1,6 +1,6 @@
 import { allPosts, Post } from 'contentlayer/generated'
 import { compareDesc } from 'date-fns'
-import HomeArticleBox from './_component/HomeArticleBox'
+import HomeArticleBox from '../components/home/HomeArticleBox'
 
 export default function Home() {
   const posts = allPosts

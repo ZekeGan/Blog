@@ -1,6 +1,7 @@
-import { format, parseISO } from 'date-fns'
 import { allPosts, Post } from 'contentlayer/generated'
 import Image from 'next/image'
+import PostBody from '@/components/blog/postBody/index'
+import PostTitle from '@/components/blog/PostTitle'
 
 // static data
 export const generateStaticParams = async () => {
@@ -19,26 +20,21 @@ export default async function PostLayout({ params }: { params: { slug: string } 
   if (!post) throw new Error(`Post not found for slug: ${params.slug}`)
 
   return (
-    <article className='w-[60%]'>
-      <div className='mb-8'>
-        <h1 className='text-3xl font-bold'>{post.title}</h1>
-        <time dateTime={post.date} className='mb-1 text-xs text-gray-600'>
-          {format(parseISO(post.date), 'LLLL d, yyyy')}
-        </time>
+    <article className='w-full py-10 grid grid-cols-[20%_auto_20%] grid-rows-[8rem_25rem_auto]'>
+      <PostTitle post={post} className='mb-8 w-[60%] col-start-2 row-start-1' />
+      <div className='col-start-1 col-end-3 row-start-2 row-end-3 bg-gray-300'>
+        <Image
+          src='/images/22.jpg'
+          alt=''
+          className='object-cover h-full w-full'
+          priority
+          width='0'
+          height='0'
+          sizes='100vw'
+        />
       </div>
-      <Image
-        src='/images/22.jpg'
-        alt=''
-        className='object-cover w-full h-auto mb-8'
-        priority
-        width='0'
-        height='0'
-        sizes='100vw'
-      />
-      <div
-        className='[&>*]:mb-3 [&>*:last-child]:mb-0 blog'
-        dangerouslySetInnerHTML={{ __html: post.body.html }}
-      />
+      <div className=' row-start-3 col-start-3'>目錄</div>
+      <PostBody post={post} className='row-start-3 col-start-2 py-5' />
     </article>
   )
 }

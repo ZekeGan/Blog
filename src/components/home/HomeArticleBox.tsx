@@ -11,7 +11,7 @@ const HomeArticleBox = ({ post }: { post: Post }) => {
   const [isHover, setIsHover] = useState(false)
   return (
     <Link
-      href={post.url.replace('posts', 'blog')}
+      href={post.url}
       className=' h-64 bg-gray-300 relative overflow-hidden'
       onMouseEnter={() => setIsHover(true)}
       onMouseLeave={() => setIsHover(false)}

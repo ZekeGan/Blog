@@ -45,7 +45,7 @@ export default function SidebarMain() {
           </div>
         </div>
         <div className=' flex flex-col space-y-5'>
-          {links.map((link) => (
+          {/* {links.map((link) => (
             <a
               key={link.label}
               href={link.url}
@@ -53,7 +53,7 @@ export default function SidebarMain() {
             >
               <link.logo size={20} />
             </a>
-          ))}
+          ))} */}
         </div>
       </div>
     </div>
