@@ -5,6 +5,7 @@ import clsx from 'clsx'
 import useSidebarRoutes from '@/hooks/useSidebarRoutes'
 import useSidebarOuterLinks from '@/hooks/useSidebarOuterLinks'
 import { Component } from 'react'
+import ThemeSwitcher from './ThemeSwitcher'
 
 export default function SidebarMain() {
   const links = useSidebarOuterLinks()
@@ -23,6 +24,7 @@ export default function SidebarMain() {
           py-4 
           border-l-[1px] 
           border-gray-200
+          dark:border-gray-600
           mx-auto'
       >
         <div className=' space-y-7'>
@@ -45,6 +47,7 @@ export default function SidebarMain() {
           </div>
         </div>
         <div className=' flex flex-col space-y-5'>
+          <ThemeSwitcher />
           {/* {links.map((link) => (
             <a
               key={link.label}

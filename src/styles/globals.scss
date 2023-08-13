@@ -2,9 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
-@import 'post';
-
 html,
 body {
   box-sizing: border-box;
+}
+
+@layer base {
+  body {
+    @apply dark:bg-gray-800 bg-white;
+  }
 }

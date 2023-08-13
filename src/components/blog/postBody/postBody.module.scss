@@ -20,11 +20,80 @@
     p:last-of-type::after {
       content: none;
     }
+  }
+}
 
-    display: block;
-    margin-block-start: 1em;
-    margin-block-end: 1em;
-    margin-inline-start: 40px;
-    margin-inline-end: 40px;
+.post {
+  h1,
+  h2,
+  p,
+  i,
+  a,
+  .first-letter,
+  .authorName a {
+    text-rendering: optimizeLegibility;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: 'Lato', sans-serif;
+    font-weight: 600;
+    padding: 0;
+    text-align: left;
+    letter-spacing: -0.45px;
+  }
+  h1 {
+    font-size: 3rem;
+    margin-top: 4rem;
+  }
+
+  h2 {
+    font-size: 2.5rem;
+    margin-top: 2rem;
+  }
+  h3 {
+    font-size: 2rem;
+    margin-top: 1rem;
+  }
+  h4 {
+    font-size: 1.5rem;
+    margin-bottom: 8px;
+    margin-top: 1rem;
+  }
+  h5 {
+    font-size: 1.3rem;
+    margin-top: 1rem;
+  }
+
+  p,
+  i,
+  a {
+    margin-top: 21px;
+    font-family: 'Lora';
+    font-size: 21px;
+    letter-spacing: -0.03px;
+    line-height: 1.58;
+  }
+
+  a {
+    text-decoration: underline;
+  }
+
+  blockquote {
+    @apply border-l-4 border-gray-200;
+
+    font-family: 'Playfair Display', serif;
+    font-size: 30px;
+    font-style: italic;
+    letter-spacing: -0.36px;
+    line-height: 44.4px;
+    overflow-wrap: break-word;
+    margin: 55px 0 33px 0;
+    /* text-align: center; */
+    padding: 0 0 0 50px;
   }
 }

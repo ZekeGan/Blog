@@ -9,7 +9,7 @@ import clsx from 'clsx'
 const PostBody = ({ post, className }: { post: Post; className?: string }) => {
   const MDXContent = useMDXComponent(post.body.code)
   return (
-    <div className={clsx('prose', className, style.postBody)}>
+    <div className={clsx(className, style.postBody, style.post)}>
       <MDXContent components={mdxComponents} />
     </div>
   )

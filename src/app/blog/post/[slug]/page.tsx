@@ -21,7 +21,7 @@ export default async function PostLayout({ params }: { params: { slug: string } 
 
   return (
     <article className='w-full py-10 grid grid-cols-[20%_auto_20%] grid-rows-[8rem_25rem_auto]'>
-      <PostTitle post={post} className='mb-8 w-[60%] col-start-2 row-start-1' />
+      <PostTitle post={post} className='mb-8 w-[60%] col-start-2 row-start-1 space-y-2' />
       <div className='col-start-1 col-end-3 row-start-2 row-end-3 bg-gray-300'>
         <Image
           src='/images/22.jpg'
