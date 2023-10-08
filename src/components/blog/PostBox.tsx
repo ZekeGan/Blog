@@ -6,13 +6,23 @@ import { Post } from 'contentlayer/generated'
 
 export default function PostBox({ data }: { data: Post }) {
   return (
-    <div className='grid grid-cols-[auto_20rem] h-52 px-5 py-3  border-b-[1px] border-gray-200'>
-      <div className='grid grid-rows-[9rem_auto]'>
+    <div
+      className='
+        md:grid 
+        md:grid-cols-[auto_20rem] 
+        md:h-52 
+        w-full
+        px-5 
+        py-3  
+        border-b-[1px] 
+      border-gray-200'
+    >
+      <div className='md:grid md:grid-rows-[9rem_auto]'>
         <Link href={data.url}>
           <h1 className='text-lg font-semibold'>{data.title}</h1>
-          <p>{data.description}</p>
+          <p>{data.description.slice(0, 100) + '...'}</p>
         </Link>
-        <div className='flex items-center space-x-3'>
+        <div className='flex items-center space-x-3 mt-2'>
           {data.tags.map((tag: string) => (
             <Link
               key={tag}
@@ -27,7 +37,7 @@ export default function PostBox({ data }: { data: Post }) {
 
       <Link
         href={data.url}
-        className='h-[rem] w-[15rem] relative overflow-hidden ml-auto'
+        className='hidden md:block h-[rem] w-[15rem] relative overflow-hidden ml-auto'
       >
         <Image
           src='/images/22.jpg'

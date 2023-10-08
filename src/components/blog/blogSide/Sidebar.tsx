@@ -11,7 +11,15 @@ const Sidebar = () => {
   }, [])
 
   return (
-    <aside className=' col-start-1 row-start-2 w-full flex justify-center'>
+    <aside
+      className='
+        hidden 
+        md:flex 
+        col-start-1 
+        row-start-2 
+        w-full 
+        justify-center'
+    >
       <div className='flex flex-col items-center w-32 space-y-2'>
         <h1 className='border-b-[1px] border-gray-200 text-xl font-bold w-full text-center'>
           Tags

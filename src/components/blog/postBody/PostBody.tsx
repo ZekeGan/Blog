@@ -1,15 +1,17 @@
 'use client'
-
+import { FC } from 'react'
 import { Post } from 'contentlayer/generated'
 import { useMDXComponent } from 'next-contentlayer/hooks'
 import style from './postBody.module.scss'
 import mdxComponents from '@/libs/mdxComponent'
 import clsx from 'clsx'
 
-const PostBody = ({ post, className }: { post: Post; className?: string }) => {
+type PostBodyProps = { post: Post }
+
+const PostBody: FC<PostBodyProps> = ({ post }) => {
   const MDXContent = useMDXComponent(post.body.code)
   return (
-    <div className={clsx(className, style.postBody, style.post)}>
+    <div className={clsx('row-start-3 col-start-2 py-5', style.postBody, style.post)}>
       <MDXContent components={mdxComponents} />
     </div>
   )

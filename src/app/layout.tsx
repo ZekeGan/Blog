@@ -1,4 +1,5 @@
-import SidebarMain from '@/components/SidebarMain'
+import SidebarScreen from '@/components/SidebarScreen'
+import SidebarMobile from '@/components/SidebarMobile'
 import '@/styles/globals.scss'
 import '@/styles/prism-dracula.css'
 import '@/styles/prism-plus.css'
@@ -17,10 +18,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang='en'>
       <body className={inter.className}>
         <ThemeProvider attribute='class'>
-          <div className='grid grid-cols-[auto_6rem]'>
+          <div className='md:grid md:grid-cols-[auto_6rem]'>
+            <SidebarMobile />
             <div className='flex justify-center max-w-full'>{children}</div>
-            <SidebarMain />
+            <SidebarScreen />
           </div>
+          <div id='portal' />
         </ThemeProvider>
       </body>
     </html>
